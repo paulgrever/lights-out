@@ -1,0 +1,28 @@
+{
+  "name": "lights-out",
+  "version": "1.0.0",
+  "description": "a version of lights out game",
+  "main": "lights-out.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulgrever/lights-out.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulgrever/lights-out/issues"
+  },
+  "homepage": "https://github.com/paulgrever/lights-out",
+  "dependencies": {
+    "materialize-css": "^0.96.1",
+    "mocha": "^2.2.5"
+  },
+  "devDependencies": {
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.9.10"
+  }
+}
