@@ -5,7 +5,7 @@
   "main": "lights-out.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "start": "webpack ./lights-out.js bundle.js && webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,16 @@
   },
   "homepage": "https://github.com/paulgrever/lights-out",
   "dependencies": {
+    "chai": "^2.3.0",
+    "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5",
     "materialize-css": "^0.96.1",
     "mocha": "^2.2.5"
   },
   "devDependencies": {
+    "css-loader": "^0.14.4",
     "node-libs-browser": "^0.5.2",
+    "style-loader": "^0.12.3",
     "webpack": "^1.9.10"
   }
 }
