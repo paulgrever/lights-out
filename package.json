@@ -4,7 +4,8 @@
   "description": "a version of lights out game",
   "main": "lights-out.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha",
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/paulgrever/lights-out/issues"
   },
-  "homepage": "https://github.com/paulgrever/lights-out"
+  "homepage": "https://github.com/paulgrever/lights-out",
+  "dependencies": {
+    "materialize-css": "^0.96.1",
+    "mocha": "^2.2.5"
+  },
+  "devDependencies": {
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.9.10"
+  }
 }
