@@ -1,0 +1,19 @@
+{
+  "name": "lights-out",
+  "version": "1.0.0",
+  "description": "a version of lights out game",
+  "main": "lights-out.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulgrever/lights-out.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulgrever/lights-out/issues"
+  },
+  "homepage": "https://github.com/paulgrever/lights-out"
+}
