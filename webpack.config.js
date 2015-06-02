@@ -6,7 +6,8 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.css$/, loader: 'style!css' }
+      // { test: /\.(handlebars|hbs)$$/, loader: 'handlebars-loader' },
+      { test: /\.scss$/, loader: 'style!css!sass' }
     ]
   },
 };
