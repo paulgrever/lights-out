@@ -1,9 +1,15 @@
 var $ = require('jquery');
-require("jquery-ui");
+var board = require("./game_generator");
+
 $(document).ready(function(){
   $(".button-1").on("click", function(){
-    console.log("hello");
+    var fullBoard = board();
+    fullBoard.forEach(function(num){
+      divMaker(fullBoard[num].state);
+    });
   });
 });
 
-
+var divMaker = function(i){
+  console.log(i);
+};
