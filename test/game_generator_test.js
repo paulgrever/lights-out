@@ -1,3 +1,8 @@
 var expect = require("chai").expect;
-var addNums = require("../game_generator");
+var gameGenerator = require("../game_generator");
 
+describe("gameGenerator", function(){
+  it('should behave...', function() {
+
+  });
+});
