@@ -1,20 +1,15 @@
-var gameBoard = [];
-var Space = function(state) {
-  this.state = state;
-};
-
-var startOptions = ["on", "off"];
-
 var setup = function(){
+  var gameBoard = [];
+  
+  var startOptions = ["on", "off"];
   for (var i = 0; i < 25; i++){
     var startState = startOptions[Math.floor(Math.random() * startOptions.length)];
-    var space = new Space(startState);
-    gameBoard.push(space);
+    gameBoard.push({
+      state: startState
+    });
   }
+  return gameBoard;
 };
 
-setup();
-module.exports = gameBoard;
-module.exports = startOptions;
-module.exports = Space;
+console.log("game generator");
 module.exports = setup;
