@@ -36,4 +36,11 @@ describe('board', function () {
     expect(board[4][4].y).to.equal(4);
   });
 
+  it("should have a y property and an x property", function () {
+    var board = new Board();
+    var position = board[3][2];
+    expect(position.x).to.equal(3);
+    expect(position.y).to.equal(2);
+  });
+
 });
