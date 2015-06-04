@@ -1,6 +1,7 @@
 var expect = require('chai').expect;
 var Board = require('../board');
 
+
 describe('board', function () {
 
   it('should default to five rows', function () {
