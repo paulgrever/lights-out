@@ -43,40 +43,6 @@ $(document).ready(function(){
 var rowCount = Game.board.length - 1;
 var columnCount = Game.board[0].length - 1;
 
-var neighborUpdate = function(row, column){
-  var neighborSpace =[];
-  var rowCount = Game.board.length;
-  var columnCount = Game.board[0].length;
-  // north
-  if (row !==0){
-    neighborSpace.push(Game.board[row - 1][column]);
-  }
-  // west
-  if (column !==0 ){
-    neighborSpace.push(Game.board[row][column - 1]);
-  }
-  return neighborSpace;
-
-  // if((row == 0) && (column === 0)){
-  //   var south = Game.board[row + 1][column];
-  //   var east = Game.board[row][column + 1];
-  //   neighborSpace.push(south);
-  //   neighborSpace.push(east);
-  // } else if (row == 0)  {
-  //   var south = Game.board[row + 1][column];
-  //   var east = Game.board[row][column + 1];
-  //   var west = Game.board[row][column - 1];
-
-  // }
-  // var north = Game.board[row - 1][column];
-  // var south = Game.board[row + 1][column];
-  // var east = Game.board[row][column + 1];
-  // var west = Game.board[row][column - 1];
-  // console.log(north.active);
-  // console.log(east.active);
-  // console.log(south.active);
-  // console.log(west.active);
-};
 
 var game = Game;
 var currentGame = game.newGame();
