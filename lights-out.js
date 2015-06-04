@@ -18,15 +18,30 @@ $(document).ready(function(){
     space.active = !space.active;
     $(this).addClass(space.active.toString());
     if(space.x !== 0){
-
       $("#row-" + (space.x - 1) + "column-" + space.y).removeClass(space.board[(space.x-1)][space.y].active.toString());
       space.board[(space.x-1)][space.y].active = !space.board[(space.x-1)][space.y].active;
       $("#row-" + (space.x - 1) + "column-" + space.y).addClass(space.board[(space.x-1)][space.y].active.toString());
     }
+    if(space.x !== rowCount){
+      $("#row-" + (space.x + 1) + "column-" + space.y).removeClass(space.board[(space.x+1)][space.y].active.toString());
+      space.board[(space.x+1)][space.y].active = !space.board[(space.x+1)][space.y].active;
+      $("#row-" + (space.x + 1) + "column-" + space.y).addClass(space.board[(space.x+1)][space.y].active.toString());
+    }
+    if (space.y !== 0) {
+      $("#row-" + space.x + "column-" + (space.y - 1)).removeClass(space.board[space.x][(space.y - 1)].active.toString());
+      space.board[space.x][(space.y - 1)].active = !space.board[space.x][(space.y-1)].active;
+      $("#row-" + space.x + "column-" + (space.y - 1)).addClass(space.board[space.x][(space.y - 1)].active.toString());
+    }
+    if (space.y !== 0) {
+      $("#row-" + space.x + "column-" + (space.y + 1)).removeClass(space.board[space.x][(space.y + 1)].active.toString());
+      space.board[space.x][(space.y + 1)].active = !space.board[space.x][(space.y+1)].active;
+      $("#row-" + space.x + "column-" + (space.y + 1)).addClass(space.board[space.x][(space.y + 1)].active.toString());
+    }
   });
 });
 
-
+var rowCount = Game.board.length;
+var columnCount = Game.board[0].length;
 
 var neighborUpdate = function(row, column){
   var neighborSpace =[];
