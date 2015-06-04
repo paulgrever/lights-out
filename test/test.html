@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Testing Lights Out</title>
+  <link rel="stylesheet" media="all" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+  <div id="mocha"></div>
+  <div id="messages"></div>
+  <div id="fixtures">
+    <div class="container">
+      <div class="gameboard">
+      </div>
+
+      <button class='button-1 btn btn-primary'>New Game</button>
+    </div>
+  </div>
+
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+
+  <script>mocha.setup('bdd')</script>
+  <script src="../bundle.js"></script>
+  <script src="builtSpecs.js"></script>
+  <script>mocha.run();</script>
+</body>
+</html>
