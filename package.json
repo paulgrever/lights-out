@@ -5,7 +5,8 @@
   "main": "lights-out.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
-    "start": "webpack ./lights-out.js bundle.js && webpack-dev-server"
+    "start": "webpack ./lights-out.js bundle.js && webpack-dev-server --watch",
+    "test:watch": "webpack --config webpack.test.config.js --watch"
   },
   "repository": {
     "type": "git",

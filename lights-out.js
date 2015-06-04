@@ -19,3 +19,4 @@ var newGame = function(){
   }
 };
 newGame();
+console.log("hi");
