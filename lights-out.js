@@ -32,7 +32,7 @@ $(document).ready(function(){
       space.board[space.x][(space.y - 1)].active = !space.board[space.x][(space.y-1)].active;
       $("#row-" + space.x + "column-" + (space.y - 1)).addClass(space.board[space.x][(space.y - 1)].active.toString());
     }
-    if (space.y !== 0) {
+    if (space.y !== columnCount) {
       $("#row-" + space.x + "column-" + (space.y + 1)).removeClass(space.board[space.x][(space.y + 1)].active.toString());
       space.board[space.x][(space.y + 1)].active = !space.board[space.x][(space.y+1)].active;
       $("#row-" + space.x + "column-" + (space.y + 1)).addClass(space.board[space.x][(space.y + 1)].active.toString());
@@ -40,8 +40,8 @@ $(document).ready(function(){
   });
 });
 
-var rowCount = Game.board.length;
-var columnCount = Game.board[0].length;
+var rowCount = Game.board.length - 1;
+var columnCount = Game.board[0].length - 1;
 
 var neighborUpdate = function(row, column){
   var neighborSpace =[];
