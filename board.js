@@ -7,8 +7,8 @@ module.exports = function (rows, columns) {
   for (var r = 0; r < rows; r++) {
     var row = [];
     for (var c = 0; c < columns; c++) {
-      row.push({ active: startOptions[Math.floor(Math.random() * startOptions.length)], board: board, x: r, y: c });
-      // row.push({ active: false, board: board, x: r, y: c });
+       row.push({ active: startOptions[Math.floor(Math.random() * startOptions.length)], board: board, x: r, y: c });
+       // row.push({ active: false, board: board, x: r, y: c });
     }
     board.push(row);
   }
@@ -17,4 +17,3 @@ module.exports = function (rows, columns) {
 };
 
 var startOptions = [true,  false];
-var startState = startOptions[Math.floor(Math.random() * startOptions.length)];
