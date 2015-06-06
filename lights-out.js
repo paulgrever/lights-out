@@ -42,6 +42,7 @@ $(document).ready(function(){
       $("#row-" + space.x + "column-" + (space.y + 1)).addClass(space.board[space.x][(space.y + 1)].active.toString());
     }
     if (Game.board.spacesInactive()) {
+      debugger;
       alert("Game Over!");
       $squares.off("click", renderNext);
     }

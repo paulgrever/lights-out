@@ -44,4 +44,9 @@ describe('board', function () {
     expect(position.y).to.equal(2);
   });
 
+  it('sould know when the game is over', function() {
+    var board = new Board();
+
+  });
+
 });
