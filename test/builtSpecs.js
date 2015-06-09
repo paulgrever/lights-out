@@ -7179,17 +7179,14 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var boardDifficulties = __webpack_require__(42);
-	  if (typeof(boardTemplate)==='undefined') boardTemplate = boardDifficulties;
 
 	function Board( rows, columns, boardTemplate) {
-	  var boardTemplate = [ {r: 0, c: 1},
-	                        {r: 1, c: 0},
-	                        {r: 1, c: 1},
-	                        {r: 1, c: 2},
-	                        {r: 2, c: 1} ]
+	  boardTemplate = boardTemplate || [ {r: 3, c: 4},
+	                                     {r: 4, c: 4},
+	                                     {r: 4, c: 3} ];
 
-	  rows = rows || 6;
-	  columns = columns || 6;
+	  rows = rows || 5;
+	  columns = columns || 5;
 	  var startOptions = [true,  false];
 
 	  this.board = [];
@@ -7205,21 +7202,21 @@
 	      };
 	      // if (boardTemplate && boardTemplate[r][c]) { space.active = true };
 	      row.push(space);
-	    };
+	    }
 	    this.board.push(row);
-	  };
+	  }
 	  for (var s = 0; s < boardTemplate.length; s++) {
-	    var bt = boardTemplate[s]
-	    this.board[bt["r"]][bt["c"]].active = true
-	  };
-	};
+	    var bt = boardTemplate[s];
+	    this.board[bt["r"]][bt["c"]].active = true;
+	  }
+	}
 
 	Board.prototype.rowCount = function() {
-	  return this.board.length - 1
+	  return this.board.length;
 	};
 
 	Board.prototype.columnCount = function() {
-	  return this.board[0].length - 1
+	  return this.board[0].length;
 	};
 
 	Board.prototype.getLength = function() {
