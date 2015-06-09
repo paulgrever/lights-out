@@ -1,10 +1,20 @@
 var boardDifficulties = require("./board_difficulties.js");
 
 function Board( rows, columns, boardTemplate) {
-  boardTemplate = boardTemplate || [ {r: 3, c: 4},
-                                     {r: 4, c: 4},
-                                     {r: 4, c: 3} ];
-
+  boardTemplate = boardTemplate || [
+                                     {r: 1, c: 1},
+                                     {r: 1, c: 2},
+                                     {r: 2, c: 0},
+                                     {r: 2, c: 1},
+                                     {r: 2, c: 2},
+                                     {r: 2, c: 3},
+                                     {r: 3, c: 0},
+                                     {r: 3, c: 1},
+                                     {r: 3, c: 2},
+                                     {r: 3, c: 3},
+                                     {r: 4, c: 1},
+                                     {r: 4, c: 2}
+                                   ]
   rows = rows || 5;
   columns = columns || 5;
   var startOptions = [true,  false];
