@@ -1,4 +1,4 @@
-console.log( "Hello" )
+
 module.exports = [
                   {r: 0, c: 1,
                    r: 1, c: 0,

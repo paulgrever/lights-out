@@ -4,6 +4,21 @@ var Game = require('./game_generator');
 
 require('./stylesheet.scss');
 
+function flipSpace(offsetX, offsetY, space) {
+  var neighbor = space.board[space.x + offsetX] && space.board[space.x + offsetX][space.y + offsetY];
+  if (neighbor) {
+    $("#row-" + (neighbor.x) + "column-" + neighbor.y).removeClass(neighbor.board[neighbor.x][neighbor.y].active.toString());
+    neighbor.active = !neighbor.active;
+    $("#row-" + (neighbor.x) + "column-" + neighbor.y).addClass(neighbor.board[(neighbor.x)][neighbor.y].active.toString());
+  }
+}
+
+var flipNorth = flipSpace.bind(null, 0, -1);
+var flipEast = flipSpace.bind(null, 1, 0);
+var flipSouth = flipSpace.bind(null, 0, 1);
+var flipWest = flipSpace.bind(null, -1, 0);
+
+
 $(document).ready(function(){
   $(".button-1").on("click", function() {
     $('.gameboard div').remove();
@@ -21,30 +36,17 @@ $(document).ready(function(){
     space.active = !space.active;
     $(this).addClass(space.active.toString());
 
-    if(space.x !== 0){
-      $("#row-" + (space.x - 1) + "column-" + space.y).removeClass(space.board[(space.x-1)][space.y].active.toString());
-      space.board[(space.x-1)][space.y].active = !space.board[(space.x-1)][space.y].active;
-      $("#row-" + (space.x - 1) + "column-" + space.y).addClass(space.board[(space.x-1)][space.y].active.toString());
-    }
-    if(space.x !== Game.board.rowCount()){
-      $("#row-" + (space.x + 1) + "column-" + space.y).removeClass(space.board[(space.x+1)][space.y].active.toString());
-      space.board[(space.x+1)][space.y].active = !space.board[(space.x+1)][space.y].active;
-      $("#row-" + (space.x + 1) + "column-" + space.y).addClass(space.board[(space.x+1)][space.y].active.toString());
-    }
-    if (space.y !== 0) {
-      $("#row-" + space.x + "column-" + (space.y - 1)).removeClass(space.board[space.x][(space.y - 1)].active.toString());
-      space.board[space.x][(space.y - 1)].active = !space.board[space.x][(space.y-1)].active;
-      $("#row-" + space.x + "column-" + (space.y - 1)).addClass(space.board[space.x][(space.y - 1)].active.toString());
-    }
-    if (space.y !== Game.board.columnCount()) {
-      $("#row-" + space.x + "column-" + (space.y + 1)).removeClass(space.board[space.x][(space.y + 1)].active.toString());
-      space.board[space.x][(space.y + 1)].active = !space.board[space.x][(space.y+1)].active;
-      $("#row-" + space.x + "column-" + (space.y + 1)).addClass(space.board[space.x][(space.y + 1)].active.toString());
-    }
+    flipNorth(space);
+    flipEast(space);
+    flipSouth(space);
+    flipWest(space);
+
     if (Game.board.spacesInactive()) {
       alert("Game Over!");
       $squares.off("click", renderNext);
     }
+
+    console.table(space.board);
   }
 
   $squares.on("click", renderNext);
