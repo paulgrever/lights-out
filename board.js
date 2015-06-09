@@ -1,4 +1,13 @@
-function Board( rows, columns) {
+var boardDifficulties = require("./board_difficulties.js")
+  if (typeof(boardTemplate)==='undefined') boardTemplate = boardDifficulties;
+
+function Board( rows, columns, boardTemplate) {
+  var boardTemplate = [ {r: 0, c: 1},
+                        {r: 1, c: 0},
+                        {r: 1, c: 1},
+                        {r: 1, c: 2},
+                        {r: 2, c: 1} ]
+
   rows = rows || 6;
   columns = columns || 6;
   var startOptions = [true,  false];
@@ -9,35 +18,21 @@ function Board( rows, columns) {
     var row = [];
     for (var c = 0; c < columns; c++) {
       var space = {
-        active: startOptions[Math.floor(Math.random() * startOptions.length)],
+        active: false,
         board: this.board,
         x: r,
         y: c
       };
+      // if (boardTemplate && boardTemplate[r][c]) { space.active = true };
       row.push(space);
     };
     this.board.push(row);
   };
-};
-
-      /*
-      var space = {
-	active: false,
-	board: this.board,
-	x: r,
-	y: c
-      };
-      row.push(space);
-    };
-    this.board.push(row);
+  for (var s = 0; s < boardTemplate.length; s++) {
+    var bt = boardTemplate[s]
+    this.board[bt["r"]][bt["c"]].active = true
   };
-  this.board[0][1].active = true;
-  this.board[1][0].active = true;
-  this.board[1][1].active = true;
-  this.board[1][2].active = true;
-  this.board[2][1].active = true;
 };
-*/
 
 Board.prototype.rowCount = function() {
   return this.board.length - 1

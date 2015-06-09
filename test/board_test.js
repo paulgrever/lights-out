@@ -45,6 +45,11 @@ describe('board', function () {
   });
 
   it('sould know when the game is over', function() {
+    var boardTemplate = [{r: 0, c: 1},
+                         {r: 1, c: 0},
+                         {r: 1, c: 1},
+                         {r: 1, c: 2},
+                         {r: 2, c: 1}]
     var board = new Board();
 
   });
