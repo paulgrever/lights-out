@@ -1,4 +1,4 @@
-var boardDifficulties = require("./board_difficulties.js")
+var boardDifficulties = require("./board_difficulties.js");
   if (typeof(boardTemplate)==='undefined') boardTemplate = boardDifficulties;
 
 function Board( rows, columns, boardTemplate) {
@@ -8,8 +8,8 @@ function Board( rows, columns, boardTemplate) {
                         {r: 1, c: 2},
                         {r: 2, c: 1} ]
 
-  rows = rows || 6;
-  columns = columns || 6;
+  rows = rows || 5;
+  columns = columns || 5;
   var startOptions = [true,  false];
 
   this.board = [];
@@ -35,16 +35,16 @@ function Board( rows, columns, boardTemplate) {
 };
 
 Board.prototype.rowCount = function() {
-  return this.board.length - 1
-}
+  return this.board.length
+};
 
 Board.prototype.columnCount = function() {
-  return this.board[0].length - 1
-}
+  return this.board[0].length
+};
 
 Board.prototype.getLength = function() {
   return this.board.length
-}
+};
 
 Board.prototype.spacesInactive = function() {
   for ( var r = 0; r < this.board.length; r++) {
