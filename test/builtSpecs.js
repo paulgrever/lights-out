@@ -7188,8 +7188,8 @@
 	                        {r: 1, c: 2},
 	                        {r: 2, c: 1} ]
 
-	  rows = rows || 5;
-	  columns = columns || 5;
+	  rows = rows || 6;
+	  columns = columns || 6;
 	  var startOptions = [true,  false];
 
 	  this.board = [];
@@ -7215,11 +7215,11 @@
 	};
 
 	Board.prototype.rowCount = function() {
-	  return this.board.length
+	  return this.board.length - 1
 	};
 
 	Board.prototype.columnCount = function() {
-	  return this.board[0].length
+	  return this.board[0].length - 1
 	};
 
 	Board.prototype.getLength = function() {
